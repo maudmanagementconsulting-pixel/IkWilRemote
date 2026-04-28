@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog over Remote Werken | Tips en Inspiratie | Ik Wil Remote</title>
+  <meta name="description" content="Ontdek tips, gidsen en eerlijke verhalen over remote werken. Alles wat je nodig hebt om te starten met locatie-onafhankelijk werken in Nederland.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="remote werken blog, remote werken tips, locatie onafhankelijk werken gids, remote werk inspiratie nederland, remote werken beginners">
+  <link rel="canonical" href="https://ikwilremote.nl/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikwilremote.nl/blog.html">
+  <meta property="og:title" content="Blog over Remote Werken | Tips en Inspiratie | Ik Wil Remote">
+  <meta property="og:description" content="Ontdek tips, gidsen en eerlijke verhalen over remote werken. Alles wat je nodig hebt om te starten met locatie-onafhankelijk werken.">
+  <meta property="og:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="Ik Wil Remote">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog over Remote Werken | Tips en Inspiratie | Ik Wil Remote">
+  <meta name="twitter:description" content="Ontdek tips, gidsen en eerlijke verhalen over remote werken. Alles wat je nodig hebt om te starten.">
+  <meta name="twitter:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Filter tabs ── */
+    .blog-filters {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 72px; z-index: 90;
+    }
+    .blog-filters-inner {
+      display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+    }
+    .blog-filters-inner::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      padding: 16px 22px; font-size: .88rem; font-weight: 700;
+      color: var(--gray); background: transparent; border: none;
+      border-bottom: 3px solid transparent; cursor: pointer;
+      white-space: nowrap; transition: color .2s, border-color .2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { color: var(--primary); }
+    .filter-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* ── Featured ── */
+    .blog-featured {
+      background: var(--white); border-radius: var(--radius-xl);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow); display: grid;
+      grid-template-columns: 1fr 1fr; margin-bottom: 64px;
+    }
+    .blog-featured-img {
+      background-size: cover; background-position: center;
+      min-height: 340px;
+    }
+    .blog-featured-body {
+      padding: 52px 48px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .blog-featured-body h2 { font-size: clamp(1.4rem,2.5vw,1.9rem); margin-bottom: 12px; }
+    .blog-featured-body p { font-size: 1rem; margin-bottom: 28px; }
+    .blog-featured-tag {
+      display: inline-block; font-size: .72rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--primary); background: var(--light-blue);
+      border-radius: var(--radius-full); padding: 4px 12px; margin-bottom: 16px;
+    }
+
+    /* ── Blog grid ── */
+    .blog-all-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 960px) { .blog-all-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 600px) { .blog-all-grid { grid-template-columns: 1fr; } }
+
+    /* ── Blog card ── */
+    .blog-card-new {
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .blog-card-new:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .blog-card-new.hidden { display: none; }
+
+    .blog-card-img {
+      height: 210px;
+      background-size: cover; background-position: center;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    .blog-card-body { padding: 28px 28px 24px; display: flex; flex-direction: column; flex: 1; }
+    .blog-card-tag {
+      display: inline-block; font-size: .72rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--primary); background: var(--light-blue);
+      border-radius: var(--radius-full); padding: 4px 12px;
+      margin-bottom: 14px; align-self: flex-start;
+    }
+    .blog-card-body h3 {
+      font-size: 1.05rem; line-height: 1.45; margin-bottom: 10px; color: var(--dark);
+    }
+    .blog-card-body p { font-size: .9rem; color: var(--gray); line-height: 1.65; margin-bottom: 20px; flex: 1; }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 12px;
+      font-size: .75rem; color: var(--gray); font-weight: 600; margin-bottom: 18px;
+    }
+    .blog-card-meta span { display: flex; align-items: center; gap: 4px; }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .88rem; font-weight: 700; color: var(--primary);
+      transition: gap .2s;
+    }
+    .blog-read-more:hover { gap: 10px; }
+
+    @media (max-width: 768px) {
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-featured-img { min-height: 220px; }
+      .blog-featured-body { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Blog</span></div>
+    <h1>Alles over remote werken</h1>
+    <p>Praktische tips, eerlijke verhalen en bewezen strategieën. Geen fluff, geen vaagheid. Alleen wat je echt verder helpt.</p>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="blog-filters">
+  <div class="container">
+    <div class="blog-filters-inner">
+      <button class="filter-btn active" data-filter="all">Alles</button>
+      <button class="filter-btn" data-filter="starten">Starten met remote werken</button>
+      <button class="filter-btn" data-filter="skills">Skills en inkomen</button>
+      <button class="filter-btn" data-filter="lifestyle">Remote lifestyle</button>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="background:var(--off-white); padding-top:64px;">
+  <div class="container">
+
+    <!-- FEATURED -->
+    <div class="blog-featured" id="blog-featured">
+      <div class="blog-featured-img" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80')"></div>
+      <div class="blog-featured-body">
+        <span class="blog-featured-tag">Starten met remote werken</span>
+        <div class="blog-card-meta">
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min leestijd</span>
+          <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 28 maart 2025</span>
+        </div>
+        <h2>Van 9-tot-5 naar volledig remote: de 5 stappen die echt werken</h2>
+        <p>Hoe zet je de stap naar remote werken zonder dat je inkomsten instorten? De bewezen route die honderden mensen al gevolgd hebben.</p>
+        <a href="blog-1.html" class="btn btn-primary">Lees het artikel</a>
+      </div>
+    </div>
+
+    <!-- ALL CARDS GRID -->
+    <div class="blog-all-grid">
+
+      <!-- Blog 4 — Starten -->
+      <div class="blog-card-new" data-cat="starten">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Starten</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+            <span>7 jan 2026</span>
+          </div>
+          <h3>Hoe weet je of remote werken bij jou past? De eerlijke zelftest</h3>
+          <p>Zeven vragen die je eerlijk beantwoorden of jij de mindset en omstandigheden hebt om de overstap te maken.</p>
+          <a href="blog-4.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 5 — Starten -->
+      <div class="blog-card-new" data-cat="starten">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Starten</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 min</span>
+            <span>21 jan 2026</span>
+          </div>
+          <h3>Je eerste remote klant vinden zonder netwerk: zo doe je het</h3>
+          <p>Geen portfolio, geen ervaring, geen netwerk? Toch je eerste klant vinden. Hier zijn de concrete stappen.</p>
+          <a href="blog-5.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 2 — Skills -->
+      <div class="blog-card-new" data-cat="skills">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Skills en inkomen</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+            <span>14 mrt 2025</span>
+          </div>
+          <h3>De 7 meest gevraagde remote skills van 2026 (en hoe jij ze ontwikkelt)</h3>
+          <p>Welke vaardigheden leveren je daadwerkelijk remote klanten op? De zeven meest gevraagde op een rij.</p>
+          <a href="blog-2.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 6 — Skills -->
+      <div class="blog-card-new" data-cat="skills">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Skills en inkomen</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+            <span>4 feb 2026</span>
+          </div>
+          <h3>Hoeveel kun je verdienen als remote werker? Een eerlijk overzicht</h3>
+          <p>Geen mooipraterij. Wat verdienen virtual assistants, social media managers en UGC creators echt?</p>
+          <a href="blog-6.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 7 — Skills -->
+      <div class="blog-card-new" data-cat="skills">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Skills en inkomen</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min</span>
+            <span>18 feb 2026</span>
+          </div>
+          <h3>Van loondienst naar freelance: alles wat je moet weten over de overstap</h3>
+          <p>KVK, BTW, boekhouding, verzekeringen. De praktische kant van ZZP worden, zonder verrassingen.</p>
+          <a href="blog-7.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 3 — Lifestyle -->
+      <div class="blog-card-new" data-cat="lifestyle">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Remote lifestyle</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+            <span>3 mrt 2025</span>
+          </div>
+          <h3>Werken vanuit Bali, Lissabon of je eigen bank: wat remote werken echt betekent</h3>
+          <p>Remote werken gaat niet over de locatie, het gaat over de vrijheid. Wat het echt inhoudt, eerlijk verteld.</p>
+          <a href="blog-3.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 8 — Lifestyle -->
+      <div class="blog-card-new" data-cat="lifestyle">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Remote lifestyle</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+            <span>10 mrt 2026</span>
+          </div>
+          <h3>Productief blijven als je overal kunt werken: de systemen die echt helpen</h3>
+          <p>Vrijheid zonder structuur leidt tot chaos. Dit zijn de gewoontes en systemen die remote werkers productief houden.</p>
+          <a href="blog-8.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 9 — Lifestyle -->
+      <div class="blog-card-new" data-cat="lifestyle">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Remote lifestyle</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+            <span>24 mrt 2026</span>
+          </div>
+          <h3>Remote werken en eenzaamheid: hoe je verbinding houdt zonder vaste collega's</h3>
+          <p>Eenzaamheid is het meest onderschatte nadeel van remote werken. Zo bouw je echte verbinding op, ook zonder kantoor.</p>
+          <a href="blog-9.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 10 — Starten -->
+      <div class="blog-card-new" data-cat="starten">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Starten</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+            <span>7 apr 2026</span>
+          </div>
+          <h3>Waarom de meeste mensen nooit remote gaan werken (en hoe jij dat doorbreekt)</h3>
+          <p>Ze willen het allemaal. Maar de meeste mensen blijven in hetzelfde kantoor zitten. Hier is de eerlijke reden waarom.</p>
+          <a href="blog-10.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 11 — Starten -->
+      <div class="blog-card-new" data-cat="starten">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Starten</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min</span>
+            <span>14 apr 2026</span>
+          </div>
+          <h3>Remote werken als introvert: waarom jij eigenlijk een voordeel hebt</h3>
+          <p>Introverten denken dat ze een nadeel hebben bij het opbouwen van een remote carrière. Het tegendeel is waar.</p>
+          <a href="blog-11.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 12 — Starten -->
+      <div class="blog-card-new" data-cat="starten">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Starten</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 min</span>
+            <span>10 apr 2026</span>
+          </div>
+          <h3>De grootste misverstanden over remote werken: wat is echt waar?</h3>
+          <p>Er bestaan veel hardnekkige mythes over remote werken. We gaan ze één voor één langs en vertellen je wat er van klopt.</p>
+          <a href="blog-12.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 13 — Skills -->
+      <div class="blog-card-new" data-cat="skills">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Skills en inkomen</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min</span>
+            <span>1 apr 2026</span>
+          </div>
+          <h3>Hoe je als virtual assistant €2.000 per maand verdient: de stap-voor-stap aanpak</h3>
+          <p>Van nul naar een stabiel inkomen als VA. Geen vaagheid, alleen wat er echt voor nodig is.</p>
+          <a href="blog-13.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 14 — Skills -->
+      <div class="blog-card-new" data-cat="skills">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Skills en inkomen</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 min</span>
+            <span>25 mrt 2026</span>
+          </div>
+          <h3>Social media management als remote baan: wat je moet weten voor je begint</h3>
+          <p>Elk bedrijf heeft social media nodig. Weinig weten hoe. Jij kunt die kloof dichten, op afstand, voor een eerlijk tarief.</p>
+          <a href="blog-14.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 15 — Lifestyle -->
+      <div class="blog-card-new" data-cat="lifestyle">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Remote lifestyle</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min</span>
+            <span>15 mrt 2026</span>
+          </div>
+          <h3>Werken vanuit het buitenland: belasting en verzekering geregeld</h3>
+          <p>Van Bali tot Portugal: wat je fiscaal en juridisch moet weten als je als Nederlander remote werkt vanuit het buitenland.</p>
+          <a href="blog-15.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Blog 16 — Lifestyle -->
+      <div class="blog-card-new" data-cat="lifestyle">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Remote lifestyle</span>
+          <div class="blog-card-meta">
+            <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min</span>
+            <span>8 apr 2026</span>
+          </div>
+          <h3>Hoe remote werkers hun dag inrichten voor maximale vrijheid én productiviteit</h3>
+          <p>Vrijheid zonder structuur wordt chaos. Hier is hoe ervaren remote werkers hun dag opbouwen zodat ze alles krijgen wat ze wilden.</p>
+          <a href="blog-16.html" class="blog-read-more">Lees verder <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Klaar om zelf de sprong te wagen?</h2>
+    <p>Kennis is het begin. Begeleiding is de versnelling. Plan een Match call en ontdek of het traject bij jou past.</p>
+    <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-white btn-lg">Plan een Match call</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.blog-card-new');
+  const featured = document.getElementById('blog-featured');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Show/hide featured only on "all"
+      if (featured) featured.style.display = filter === 'all' ? '' : 'none';
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.cat === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Scroll-in animation
+  const obs = new IntersectionObserver(e => {
+    e.forEach(x => {
+      if (x.isIntersecting) {
+        x.target.style.opacity = '1';
+        x.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = `opacity .5s ease ${i * 60}ms, transform .5s ease ${i * 60}ms`;
+    obs.observe(el);
+  });
+</script>
+<script src="components.js"></script>
+</body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match call Aanvragen | Contact | Ik Wil Remote</title>
+  <meta name="description" content="Plan een gratis match call met Ik Wil Remote. Ontdek of het traject bij jou past en zet de eerste stap naar locatie-onafhankelijk werken. Geen verplichtingen.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="ik wil remote contact, remote werken match call, remote werken traject aanmelden, locatie onafhankelijk werken starten">
+  <link rel="canonical" href="https://ikwilremote.nl/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikwilremote.nl/contact.html">
+  <meta property="og:title" content="Match call Aanvragen | Contact | Ik Wil Remote">
+  <meta property="og:description" content="Plan een gratis match call met Ik Wil Remote. Ontdek of het traject bij jou past en zet de eerste stap naar locatie-onafhankelijk werken.">
+  <meta property="og:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="Ik Wil Remote">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Match call Aanvragen | Contact | Ik Wil Remote">
+  <meta name="twitter:description" content="Plan een gratis match call en ontdek of het remote werken traject bij jou past. Geen verplichtingen.">
+  <meta name="twitter:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Contact</span></div>
+    <h1>Plan een Match call</h1>
+    <p>Wil je weten of jij en het traject een goede match zijn? Vul het formulier in. We reageren binnen 24 uur en plannen samen een call van 30 minuten.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--off-white);">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Formulier -->
+      <div class="contact-form-card">
+        <h2 style="font-size:1.5rem;margin-bottom:28px;">Stuur ons een bericht</h2>
+        <form id="contactForm" onsubmit="handleContact(event)">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="voornaam">Voornaam</label>
+              <input type="text" id="voornaam" class="form-input" placeholder="Jouw voornaam" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="achternaam">Achternaam</label>
+              <input type="text" id="achternaam" class="form-input" placeholder="Jouw achternaam" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mailadres</label>
+            <input type="email" id="email" class="form-input" placeholder="jouw@email.nl" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="onderwerp">Wat kan ik voor je doen?</label>
+            <select id="onderwerp" class="form-select form-input">
+              <option value="">Selecteer een onderwerp</option>
+              <option value="matchcall">Match call plannen</option>
+              <option value="traject">Meer informatie over het traject</option>
+              <option value="community">Vragen over de community</option>
+              <option value="guide">Vraag over de Remote Werken Guide</option>
+              <option value="anders">Iets anders</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bericht">Vertel ons meer</label>
+            <textarea id="bericht" class="form-textarea" placeholder="Waar ben je op dit moment en wat wil je bereiken? Hoe meer context je geeft, hoe beter we je kunnen helpen." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px;" id="submitBtn">
+            Verstuur bericht
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p id="formSuccess" style="display:none;text-align:center;color:#065f46;font-weight:700;margin-top:16px;padding:14px;background:#d1fae5;border-radius:var(--radius);">Bedankt! We nemen binnen 24 uur contact met je op.</p>
+        </form>
+      </div>
+
+      <!-- Contact info -->
+      <div class="contact-info-stack">
+
+        <div style="background:linear-gradient(135deg,var(--primary),var(--blue));border-radius:var(--radius-lg);padding:32px;color:var(--white);margin-bottom:8px;">
+          <h3 style="color:var(--white);font-size:1.1rem;margin-bottom:10px;">Gratis Match call</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:.92rem;margin-bottom:20px;">30 minuten met een van onze coaches. We kijken eerlijk of jij en het traject een goede match zijn. Geen verkoopdruk, geen verplichtingen.</p>
+          <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-white btn-sm">Plan een Match call</a>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><h4>E-mail</h4><a href="mailto:info@ikwilremote.nl">info@ikwilremote.nl</a></div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h4>Reactietijd</h4><p>We reageren binnen 24 uur op werkdagen.</p></div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Locatie</h4><p>Nederland &amp; België &middot; volledig remote</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>
+  
+  function handleContact(e){
+    e.preventDefault();
+    const btn=document.getElementById('submitBtn');
+    btn.innerHTML='Verstuurd!';btn.style.background='#00b67a';btn.disabled=true;
+    document.getElementById('formSuccess').style.display='block';
+    document.getElementById('contactForm').querySelectorAll('input,textarea,select').forEach(f=>f.value='');
+    setTimeout(()=>{btn.innerHTML='Verstuur bericht <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';btn.style.background='';btn.disabled=false;document.getElementById('formSuccess').style.display='none';},4000);
+  }
+</script>
+<script src="components.js"></script>
+</body></html>

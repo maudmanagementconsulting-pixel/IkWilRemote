@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remote Werken Traject met Resultaatgarantie | Ik Wil Remote</title>
+  <meta name="description" content="Leer locatie-onafhankelijk werken en verdienen in 4 maanden. Persoonlijke coaching, bewezen methode en 100% resultaatgarantie. Vraag een gratis match call aan.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="remote werken traject, remote werk cursus, locatie onafhankelijk werken leren, remote werk coaching nederland, remote werken beginnen">
+  <link rel="canonical" href="https://ikwilremote.nl/aanbod.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikwilremote.nl/aanbod.html">
+  <meta property="og:title" content="Remote Werken Traject met Resultaatgarantie | Ik Wil Remote">
+  <meta property="og:description" content="Leer locatie-onafhankelijk werken en verdienen in 4 maanden. Persoonlijke coaching, bewezen methode en 100% resultaatgarantie.">
+  <meta property="og:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="Ik Wil Remote">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Remote Werken Traject met Resultaatgarantie | Ik Wil Remote">
+  <meta name="twitter:description" content="Leer locatie-onafhankelijk werken en verdienen in 4 maanden. Persoonlijke coaching en 100% resultaatgarantie.">
+  <meta name="twitter:image" content="https://ikwilremote.nl/assets/og-image.jpg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Traject onderdelen ── */
+    .traject-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+    @media (max-width: 900px) { .traject-grid { grid-template-columns: 1fr; } }
+
+    .traject-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 36px 32px;
+      box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .traject-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--blue));
+    }
+    .traject-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--blue));
+      color: var(--white); font-weight: 800; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .traject-card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--dark); }
+    .traject-card p { font-size: .95rem; color: var(--gray); line-height: 1.75; margin-bottom: 20px; }
+    .traject-card ul { list-style: none; padding: 0; margin: 0; }
+    .traject-card ul li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: .9rem; color: var(--gray); line-height: 1.65; margin-bottom: 8px;
+    }
+    .traject-card ul li::before {
+      content: ''; display: inline-block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── Wat zit erin banner ── */
+    .included-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin: 40px 0;
+    }
+    @media (max-width: 800px) { .included-grid { grid-template-columns: 1fr; } }
+    .included-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px;
+    }
+    .included-icon {
+      width: 40px; height: 40px; border-radius: var(--radius);
+      background: var(--light-blue); display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .included-item h4 { font-size: .92rem; color: var(--dark); margin: 0 0 4px; }
+    .included-item p { font-size: .83rem; color: var(--gray); margin: 0; line-height: 1.5; }
+
+    /* ── Quote highlight ── */
+    .traject-quote {
+      background: linear-gradient(135deg, var(--primary), var(--blue));
+      border-radius: var(--radius-xl); padding: 48px;
+      text-align: center; margin: 64px 0;
+    }
+    .traject-quote p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--white);
+      font-weight: 700; line-height: 1.6; margin: 0;
+    }
+    .traject-quote span { color: rgba(255,255,255,.65); font-size: .9rem; display: block; margin-top: 16px; font-weight: 500; }
+
+    /* ── Match call CTA blok ── */
+    .matchcall-block {
+      background: var(--white); border: 2px solid var(--blue);
+      border-radius: var(--radius-xl); padding: 40px 48px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center; margin-top: 48px;
+    }
+    .matchcall-block h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .matchcall-block p { font-size: .95rem; color: var(--gray); margin: 0; }
+    @media (max-width: 700px) {
+      .matchcall-block { grid-template-columns: 1fr; text-align: center; }
+      .traject-quote { padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Aanbod</span></div>
+    <h1>Het traject</h1>
+    <p>Een volledig begeleid programma dat je in drie krachtige onderdelen begeleidt van geen idee waar te beginnen, naar jouw eerste remote inkomen. Met resultaatgarantie.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section" style="background:var(--off-white);">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag">Hoe het werkt</span>
+      <h2>Drie onderdelen.<br>Één duidelijk doel.</h2>
+      <p>Dit is geen losse cursus die je daarna alleen laat. Elk onderdeel bouwt voort op het vorige en je staat er nooit alleen voor, totdat je jouw eerste remote inkomen hebt.</p>
+    </div>
+
+    <div class="traject-grid">
+
+      <!-- Onderdeel 1 -->
+      <div class="traject-card">
+        <div class="traject-num">1</div>
+        <h3>Wie ben jij?</h3>
+        <p>We beginnen bij de basis: jijzelf. Via gerichte opdrachten ontdek je wat jouw sterke punten zijn, welke karaktereigenschappen jou typeren en waar jouw kwaliteiten liggen.</p>
+        <ul>
+          <li>Gerichte zelfontdekkingsopdrachten</li>
+          <li>Inzicht in jouw sterke en zwakke punten</li>
+          <li>De succesformule: een persoonlijke test die een rapport genereert met de twee verdienmodellen die het beste bij jou passen</li>
+          <li>Jij maakt de keuze: welk pad ga jij bewandelen?</li>
+        </ul>
+      </div>
+
+      <!-- Onderdeel 2 -->
+      <div class="traject-card">
+        <div class="traject-num">2</div>
+        <h3>De theorie</h3>
+        <p>Zodra je jouw verdienmodel hebt gekozen, ga je aan de slag met de modules. Je leert alles wat je nodig hebt om te starten, op jouw eigen tempo.</p>
+        <ul>
+          <li>Volledig online cursusmateriaal binnen jouw gekozen verdienmodel</li>
+          <li>Bij elke video maak je opdrachten, zodat je kennis direct toepast</li>
+          <li>Geen theorie zonder praktijk: je bouwt al werkende weg</li>
+          <li>Aanbevolen tools en platforms om mee te starten</li>
+        </ul>
+      </div>
+
+      <!-- Onderdeel 3 -->
+      <div class="traject-card">
+        <div class="traject-num">3</div>
+        <h3>Één-op-één begeleiding</h3>
+        <p>Dit is het meest persoonlijke onderdeel. Hier bouwen we samen jouw business. Niet generiek, maar specifiek voor jouw situatie, jouw verdienmodel en jouw doelen.</p>
+        <ul>
+          <li>Jouw aanbod neerzetten en scherp formuleren</li>
+          <li>Concrete hulp bij het vinden van je eerste klanten</li>
+          <li>De juiste stappen zetten om daadwerkelijk inkomen te genereren</li>
+          <li>Je staat er niet alleen voor, totdat je jouw eerste inkomen hebt</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Quote -->
+    <div class="traject-quote">
+      <p>"Dit is geen losse cursus, maar een traject waarin je van geen idee waar je moet beginnen naar een duidelijke richting én je eerste klanten gaat."</p>
+      <span>Het verschil van Ik Wil Remote</span>
+    </div>
+
+    <!-- WAT ZIT ERIN -->
+    <div class="section-header" style="margin-top:0;">
+      <span class="section-tag">Inclusief</span>
+      <h2>Dit zit er allemaal in</h2>
+    </div>
+
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h4>Besloten community</h4>
+          <p>Toegang tot een actieve groep gelijkgestemden die hetzelfde pad bewandelen</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <h4>Wekelijkse check-ins</h4>
+          <p>Vaste contactmomenten met je persoonlijke coach om bij te sturen waar nodig</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div>
+          <h4>Volledig cursusmateriaal</h4>
+          <p>Videos, opdrachten en tools, afgestemd op jouw gekozen verdienmodel</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div>
+          <h4>Persoonlijk rapport</h4>
+          <p>De succesformule genereert een rapport met jouw beste verdienmodellen op basis van wie jij bent</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div>
+          <h4>Hulp bij eerste klanten</h4>
+          <p>We begeleiden je actief bij het vinden en binnenhalen van je eerste klanten</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div>
+          <h4>100% resultaatgarantie</h4>
+          <p>Geen resultaat na 4 maanden? Je krijgt jouw investering volledig terug</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MATCHCALL BLOK -->
+    <div class="matchcall-block">
+      <div>
+        <h3>Klinkt dit als iets voor jou?</h3>
+        <p>De eerste stap is een gratis Match call van 30 minuten. We kijken samen of jij en het traject een goede match zijn. Eerlijk, zonder verkoopdruk.</p>
+      </div>
+      <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="white-space:nowrap;">Plan een Match call</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" style="padding-top:40px;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:32px;">
+      <span class="section-tag">Vragen over het traject</span>
+      <h2>Wat wil je weten?</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Hoe werkt de Match call precies?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">We plannen een videocall van 30 minuten. We bespreken jouw huidige situatie, wat je zoekt in remote werken en welke skills je hebt. Op basis daarvan kijken we eerlijk of jij en het traject een goede match zijn. Geen verkoopdruk, geen verplichtingen.</div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Wat houdt de succesformule in?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">De succesformule is een test die je invult na de eerste opdrachten in het traject. Op basis van jouw antwoorden genereert het systeem een persoonlijk rapport. Hierin zie je precies waar jouw kracht ligt en krijg je een concreet advies over de twee verdienmodellen die het beste bij jou passen. Vanaf dat moment maak jij de keuze welk pad je bewandelt.</div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Wanneer begint het traject na aanmelding?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">Na de Match call en bevestiging van je deelname starten we zo snel mogelijk, meestal binnen een week. We passen het startmoment aan op jouw beschikbaarheid.</div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Kan ik het traject volgen naast mijn huidige baan?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">Absoluut. De meeste deelnemers starten het traject terwijl ze nog in loondienst zijn. Je volgt de modules op jouw eigen tempo, zodat je het kunt combineren met je huidige situatie.</div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Wat als ik al een idee heb voor mijn remote business?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">Dat is een uitstekend startpunt. In de Match call kijken we samen of dat idee realistisch is en hoe we het zo snel mogelijk kunnen omzetten in inkomen. De succesformule helpt daarna om jouw aanpak verder aan te scherpen.</div></div>
+      <div class="faq-item"><button class="faq-btn" aria-expanded="false">Hoe zit het met de resultaatgarantie?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-answer">Als je het volledige traject doorloopt en de afgesproken stappen zet, maar na 4 maanden geen aantoonbaar remote inkomen hebt opgebouwd, krijg je jouw investering terug. We geloven zo sterk in onze methode dat we dit durven garanderen.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>De stap zetten is het moeilijkste.<br>Wij zijn hier om het makkelijker te maken.</h2>
+    <p>Plan vandaag nog een gratis Match call en ontdek of jij en het traject een goede match zijn.</p>
+    <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-white btn-lg">Plan een Match call</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn=>{btn.addEventListener('click',()=>{const o=btn.classList.contains('open');document.querySelectorAll('.faq-btn').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});if(!o){btn.classList.add('open');btn.setAttribute('aria-expanded','true');btn.nextElementSibling.classList.add('open');}});});
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}});},{threshold:.08});
+  document.querySelectorAll('.traject-card').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(22px)';el.style.transition=`opacity .5s ease ${i*120}ms,transform .5s ease ${i*120}ms`;obs.observe(el);});
+</script>
+<script src="components.js"></script>
+</body></html>
