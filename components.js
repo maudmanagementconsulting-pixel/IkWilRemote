@@ -89,6 +89,9 @@ const FOOTER_HTML = `
         <p>&copy; 2026 Ik Wil Remote. Alle rechten voorbehouden.</p>
         <p class="footer-kvk">KVK: 77220684 &nbsp;&middot;&nbsp; BTW: NL003165355B02</p>
       </div>
+      <div style="text-align:center;font-size:.78rem;color:rgba(255,255,255,.45);">
+        Realisatie: <a href="https://www.maudmanagementconsulting.nl/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:underline;text-underline-offset:3px;">MMC</a>
+      </div>
       <div class="footer-bottom-links">
         <a href="#">Privacybeleid</a>
         <a href="#">Algemene voorwaarden</a>
