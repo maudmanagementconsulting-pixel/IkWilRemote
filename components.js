@@ -1,5 +1,5 @@
 /**
- * Ik Wil Remote — Gedeelde navigatie & footer
+ * Ik Wil Remote - Gedeelde navigatie & footer
  * Wijzig hier één keer, geldig op alle pagina's.
  */
 
@@ -62,6 +62,14 @@ const FOOTER_HTML = `
           <li><a href="blog.html">Blog</a></li>
           <li><a href="gratis.html">Download</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Extra aanbod</h5>
+        <ul class="footer-links">
+          <li><a href="remote-kompas.html">Remote Kompas</a></li>
+          <li><a href="remote-scale-lab.html">Remote Scale Lab</a></li>
         </ul>
       </div>
 
