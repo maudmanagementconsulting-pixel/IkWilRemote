@@ -23,7 +23,7 @@ const NAV_HTML = `
       <li><a href="gratis.html">Download</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Ik wil remote werken</a>
+    <a href="https://ikwilremotetraining.nl/optin" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Ik wil remote werken</a>
   </div>
 </nav>`;
 
