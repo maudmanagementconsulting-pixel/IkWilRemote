@@ -55,6 +55,16 @@
       border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px;
     }
 
+    /* ── Verdienmodellen ── */
+    .verdienmodel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 48px; }
+    @media (max-width: 900px) { .verdienmodel-grid { grid-template-columns: 1fr; } }
+    .verdienmodel-grid .traject-card { padding: 32px 30px; }
+    .verdienmodel-grow {
+      margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
+      font-size: .82rem; color: var(--gray);
+    }
+    .verdienmodel-grow strong { color: var(--dark); display: block; margin-bottom: 6px; font-size: .82rem; }
+
     /* ── Wat zit erin banner ── */
     .included-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -169,6 +179,65 @@
     <div class="traject-quote">
       <p>"Dit is geen losse cursus, maar een traject waarin je van geen idee waar je moet beginnen naar een duidelijke richting én je eerste klanten gaat."</p>
       <span>Het verschil van Ik Wil Remote</span>
+    </div>
+
+    <!-- VERDIENMODELLEN -->
+    <div class="section-header" style="margin-top:0;">
+      <span class="section-tag">De 4 verdienmodellen</span>
+      <h2>Welk verdienmodel past bij jou?</h2>
+      <p>Binnen het traject kies je één van deze vier richtingen. Via de succesformule ontdek je welke het beste bij jou past.</p>
+    </div>
+
+    <div class="verdienmodel-grid">
+
+      <div class="traject-card">
+        <div class="traject-num">01</div>
+        <h3>Social Media Manager</h3>
+        <p>Content maken en beheren voor bedrijven. Jij bent verantwoordelijk voor de online aanwezigheid: je bedenkt content, maakt posts en zorgt dat alles er verzorgd uitziet op Instagram, Facebook of LinkedIn.</p>
+        <ul>
+          <li>Je scrolt al regelmatig op Instagram of TikTok en hebt gevoel voor wat werkt</li>
+          <li>Je vindt het leuk om teksten te schrijven of plaatjes te maken</li>
+          <li>Je bent georganiseerd en houdt van structuur</li>
+        </ul>
+        <div class="verdienmodel-grow"><strong>Groei door naar:</strong>Video Editor, Content Strateeg, Community Manager, Ads Specialist, Virtual Assistant</div>
+      </div>
+
+      <div class="traject-card">
+        <div class="traject-num">02</div>
+        <h3>Appointment Setter</h3>
+        <p>Gesprekken plannen en leads kwalificeren. Jij bent de brug tussen een potentiële klant en de verkoper: vriendelijke, eerlijke gesprekken via DM, telefoon of WhatsApp, geen druk salesgesprekken.</p>
+        <ul>
+          <li>Je communiceert makkelijk en hebt geen moeite om een gesprek te starten</li>
+          <li>Je bent volhoudend en geeft niet snel op</li>
+          <li>Je werkt graag op basis van resultaten</li>
+        </ul>
+        <div class="verdienmodel-grow"><strong>Groei door naar:</strong>Closer / Sales, Sales Manager, Eigen business opbouwen, CRM Specialist, Virtual Assistant</div>
+      </div>
+
+      <div class="traject-card">
+        <div class="traject-num">03</div>
+        <h3>Virtual Assistant</h3>
+        <p>Administratieve taken op afstand uitvoeren. De digitale rechterhand van een ondernemer: e-mails, agenda, klantcontact, offertes en administratie, zodat de ondernemer zich op het échte werk kan richten.</p>
+        <ul>
+          <li>Je bent nauwkeurig, gestructureerd en houdt van orde</li>
+          <li>Je pikt nieuwe tools en programma's snel op</li>
+          <li>Je werkt graag zelfstandig, maar bent ook een teamspeler</li>
+        </ul>
+        <div class="verdienmodel-grow"><strong>Groei door naar:</strong>Online Business Manager, Project Manager, Social Media Manager, Operations Specialist, Eigen VA-bureau</div>
+      </div>
+
+      <div class="traject-card">
+        <div class="traject-num">04</div>
+        <h3>UGC Creator</h3>
+        <p>Authentieke video-advertenties maken. Je filmt jezelf terwijl je een product test of bespreekt, monteert de video eenvoudig en levert die aan bij het bedrijf. Geen bekendheid of groot publiek nodig.</p>
+        <ul>
+          <li>Je vindt het leuk om jezelf te filmen of voor de camera te praten</li>
+          <li>Je bent creatief en weet iets aantrekkelijk in beeld te brengen</li>
+          <li>Je wilt snel starten zonder groot volgersaantal of dure apparatuur</li>
+        </ul>
+        <div class="verdienmodel-grow"><strong>Groei door naar:</strong>Video Editor, Content Strateeg, Social Media Manager, Eigen content agency, Influencer / Creator</div>
+      </div>
+
     </div>
 
     <!-- WAT ZIT ERIN -->

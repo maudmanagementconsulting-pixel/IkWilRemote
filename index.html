@@ -41,6 +41,33 @@
     }
     .team-mini-card .team-avatar { display: none; }
     .team-mini-card:has(.team-photo) .team-avatar { display: none; }
+
+    /* Foto-collage: het echte leven van onze leden */
+    .life-strip { padding: 56px 0; background: var(--off-white); overflow: hidden; }
+    .life-strip-head { text-align: center; margin-bottom: 36px; }
+    .life-strip-head span.section-tag { margin-bottom: 10px; display: inline-block; }
+    .life-strip-head h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    .life-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 18px; max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    }
+    .life-photo {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      aspect-ratio: 3/4; box-shadow: var(--shadow); transition: transform .3s ease;
+    }
+    .life-photo:nth-child(odd) { transform: rotate(-2deg); }
+    .life-photo:nth-child(even) { transform: rotate(2deg); margin-top: 22px; }
+    .life-photo:hover { transform: rotate(0) translateY(-6px) scale(1.03); z-index: 2; }
+    .life-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 900px) {
+      .life-grid { grid-template-columns: repeat(3, 1fr); }
+      .life-photo:nth-child(4), .life-photo:nth-child(5) { display: none; }
+    }
+    @media (max-width: 560px) {
+      .life-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .life-photo:nth-child(3) { display: none; }
+      .life-photo:nth-child(even) { margin-top: 0; }
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -71,7 +98,7 @@
         Meer dan 200 mensen gingen je voor
       </div>
       <h1>Je wilt <em>remote werken</em>,<br>maar je weet niet waar je moet beginnen.</h1>
-      <p class="hero-sub">Een persoonlijk begeleid traject waarin je leert hoe je een online inkomen opbouwt met een model dat bij jou past. Van €0 naar €1500–€3000 per maand - in 4 maanden. Inclusief 1-op-1 coaching, concrete stappen en hulp tot je eerste inkomen.</p>
+      <p class="hero-sub">Van €0 naar €1500–€3000 per maand — in 4 maanden.<br>Volledig begeleid, op jouw tempo.</p>
       <div class="hero-btns">
         <a href="https://link.systembridge.nl/widget/booking/1vrdX9j4lpqEJyB3E1Is" target="_blank" rel="noopener" class="btn btn-white btn-lg">Ohhh, ik wil dit!</a>
         <a href="#aanpak" class="btn btn-outline-white">Hoe werkt het?</a>
@@ -119,6 +146,21 @@
     </div>
   </div>
 </div>
+
+<!-- FOTO COLLAGE -->
+<section class="life-strip">
+  <div class="life-strip-head">
+    <span class="section-tag">Dit is echt</span>
+    <h2>Het leven van onze leden</h2>
+  </div>
+  <div class="life-grid">
+    <div class="life-photo"><img src="assets/leven-1.jpg" alt="Lid van Ik Wil Remote werkt vanaf een pool in het buitenland" loading="lazy"></div>
+    <div class="life-photo"><img src="assets/leven-6.jpg" alt="Werken op de laptop vanaf het strand" loading="lazy"></div>
+    <div class="life-photo"><img src="assets/leven-2.jpg" alt="Werken aan een verdienmodel met laptop en koffie" loading="lazy"></div>
+    <div class="life-photo"><img src="assets/leven-4.jpg" alt="Roos, founder van Ik Wil Remote, net gestart als ondernemer" loading="lazy"></div>
+    <div class="life-photo"><img src="assets/leven-7.jpg" alt="Werken op de laptop met een matcha op een terras" loading="lazy"></div>
+  </div>
+</section>
 
 <!-- PROBLEMEN -->
 <section class="section pain-section">
@@ -203,8 +245,10 @@
   <div class="container" style="max-width:760px;text-align:center;">
     <span class="section-tag">Even eerlijk zijn</span>
     <h2>Dit is niet voor iedereen</h2>
-    <p style="font-size:1.1rem;margin-bottom:20px;">Zoek je een snelle manier om "even geld online te verdienen"? Dan is dit niks voor jou.</p>
-    <p style="font-size:1.1rem;">Wil je leren hoe je stabiel <strong style="color:var(--primary);">€1500–€3000 per maand</strong> verdient met werk dat bij je past - en dit ook volhoudt? Dan zit je hier goed.</p>
+    <p style="font-size:1.1rem;margin-bottom:6px;">Zoek je een snelle manier om "even geld online te verdienen"?</p>
+    <p style="font-size:1.1rem;font-weight:700;margin-bottom:28px;">Dan is dit niks voor jou.</p>
+    <p style="font-size:1.1rem;margin-bottom:6px;">Wil je leren hoe je stabiel <strong style="color:var(--primary);">€1500–€3000 per maand</strong> verdient met werk dat bij je past — en dit ook volhoudt?</p>
+    <p style="font-size:1.1rem;font-weight:700;">Dan zit je hier goed.</p>
   </div>
 </section>
 
@@ -214,7 +258,7 @@
     <div class="section-header">
       <span class="section-tag">Onze aanpak</span>
       <h2>Zo werkt het - in 4 stappen</h2>
-      <p>Alles met persoonlijke begeleiding en duidelijke structuur. Geen losse cursus, een volledig begeleid traject.</p>
+      <p>Alles met persoonlijke begeleiding en duidelijke structuur.<br><strong>Geen losse cursus, een volledig begeleid traject.</strong></p>
     </div>
     <div class="steps-grid">
       <div class="step"><div class="step-num">1</div><h3>We bepalen wat bij jou past</h3><p>Via gerichte vragen en een persoonlijk Match call ontdekken we welk verdienmodel het beste bij jou aansluit. Jouw sterke punten, situatie en doelen staan centraal.</p></div>
